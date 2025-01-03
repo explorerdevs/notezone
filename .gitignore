@@ -203,3 +203,5 @@ tmp-*
 
 styled-system
 prisma.rs
+
+*storybook.log

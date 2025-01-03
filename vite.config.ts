@@ -3,20 +3,23 @@ import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+const isStorybook = process.argv[1]?.includes("storybook");
+
 export default defineConfig({
   envPrefix: "PUBLIC_",
   server: { host: true },
   plugins: [
-    remix({
-      future: {
-        v3_fetcherPersist: true,
-        v3_relativeSplatPath: true,
-        v3_throwAbortReason: true,
-        v3_singleFetch: true,
-        v3_lazyRouteDiscovery: true,
-        // v3_routeConfig: true,
-      },
-    }),
+    !isStorybook &&
+      remix({
+        future: {
+          v3_fetcherPersist: true,
+          v3_relativeSplatPath: true,
+          v3_throwAbortReason: true,
+          v3_singleFetch: true,
+          v3_lazyRouteDiscovery: true,
+          // v3_routeConfig: true,
+        },
+      }),
     svgr({
       svgrOptions: {
         plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
