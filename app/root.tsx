@@ -1,7 +1,27 @@
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 //@ts-expect-error
 import "@fontsource-variable/jost";
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import "./global.css";
+
+// import "./global.css";
+
+import stylesheet from "./global.css?url";
+
+import type { LinksFunction } from "@remix-run/node";
+
+export const links: LinksFunction = () => [
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+  },
+  { rel: "stylesheet", href: stylesheet },
+  { rel: "stylesheet", href: stylesheet },
+];
 
 export default function () {
   return <Outlet />;
