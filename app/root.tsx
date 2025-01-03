@@ -1,27 +1,17 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+
 //@ts-expect-error
-import "@fontsource-variable/jost";
+import "@fontsource-variable/inter";
+//@ts-expect-error
+import "@fontsource-variable/noto-serif";
+//@ts-expect-error
+import "@fontsource-variable/source-code-pro";
 
-// import "./global.css";
-
-import stylesheet from "./global.css?url";
+import "./global.css";
 
 import type { LinksFunction } from "@remix-run/node";
 
-export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-  { rel: "stylesheet", href: stylesheet },
-  { rel: "stylesheet", href: stylesheet },
-];
+export const links: LinksFunction = () => [];
 
 export default function () {
   return <Outlet />;

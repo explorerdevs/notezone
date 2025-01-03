@@ -63,9 +63,15 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.6.0
         version: 19.6.0
-      '@fontsource-variable/jost':
-        specifier: ^5.1.2
-        version: 5.1.2
+      '@fontsource-variable/inter':
+        specifier: ^5.1.1
+        version: 5.1.1
+      '@fontsource-variable/noto-serif':
+        specifier: ^5.1.1
+        version: 5.1.1
+      '@fontsource-variable/source-code-pro':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@remix-run/dev':
         specifier: ^2.15.2
         version: 2.15.2(@remix-run/react@2.15.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2))(@remix-run/serve@2.15.2(typescript@5.7.2))(@types/node@22.10.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2))
@@ -675,8 +681,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource-variable/jost@5.1.2':
-    resolution: {integrity: sha512-nvnYCeDn+++GFkZp1FlnJPCpgBlRq6COCXLYCow2ky/pvI5rMf6Nvp44OzmTiE4w2fKr6+e3e+7sfyzavcPj7Q==}
+  '@fontsource-variable/inter@5.1.1':
+    resolution: {integrity: sha512-OpXFTmiH6tHkYijMvQTycFKBLK4X+SRV6tet1m4YOUH7SzIIlMqDja+ocDtiCA72UthBH/vF+3ZtlMr2rN/wIw==}
+
+  '@fontsource-variable/noto-serif@5.1.1':
+    resolution: {integrity: sha512-zmkt//ewSyjxnLUQyzaafMDkEI71Zz0VO84/wBnSdWxqoQvcgqdOnEi3RpZTD/ZqO2F0eTUJeQLR6a8/jNfzTg==}
+
+  '@fontsource-variable/source-code-pro@5.1.1':
+    resolution: {integrity: sha512-3mNN0zSV2HgZGbQjn/vlsVx8vzi6FU2kWGaqKGsXsO6I8TCMTKyE/uxg1cxSHttZh29KgwnhbBIoIeDtS8eLVw==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -4033,7 +4045,11 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@fontsource-variable/jost@5.1.2': {}
+  '@fontsource-variable/inter@5.1.1': {}
+
+  '@fontsource-variable/noto-serif@5.1.1': {}
+
+  '@fontsource-variable/source-code-pro@5.1.1': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
