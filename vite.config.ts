@@ -30,3 +30,9 @@ export default defineConfig({
   ],
   define: { __BUILD_DATE__: JSON.stringify(new Date()) },
 });
+
+declare module "@remix-run/node" {
+  interface Future {
+    v3_singleFetch: true;
+  }
+}

@@ -20,10 +20,7 @@ export default {
       borderRadius: { pill: "100vmax" },
       colors: twConfig.theme.colors,
       fontFamily: {
-        sans: [
-          twConfig.theme.fontFamily.sans,
-          ...twDefaultTheme.fontFamily.sans,
-        ],
+        sans: [twConfig.theme.fontFamily.sans, ...twDefaultTheme.fontFamily.sans],
       },
       cursor: twConfig.theme.cursor,
       screens: {
