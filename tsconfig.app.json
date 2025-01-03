@@ -1,6 +1,6 @@
 {
   "include": [
-    "./override.d.ts",
+    "remix.env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/.server/**/*.ts",
@@ -9,8 +9,11 @@
     "**/.client/**/*.tsx"
   ],
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["@remix-run/node", "vite/client"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "Bundler",
