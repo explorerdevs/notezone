@@ -1,7 +1,15 @@
+import { Button } from "@/components/button";
+
 export default function Page() {
   return (
     <main>
-      <h1 className="text-purple-500 underline">Hello</h1>
+      <div className="flex items-center justify-center gap-3">
+        <h1 className="text-5xl text-cobalt-500 underline hover:text-cobalt-700">
+          hello
+        </h1>
+        <Button variant="primary">Click me</Button>
+        <Button variant="secondary">Click me</Button>
+      </div>
     </main>
   );
 }

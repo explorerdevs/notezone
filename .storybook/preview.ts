@@ -1,6 +1,7 @@
-import type { Preview } from "@storybook/react";
+import "../app/global.css";
+/** @type { import('@storybook/react').Preview } */
 
-export default {
+const preview = {
   parameters: {
     controls: {
       matchers: {
@@ -9,4 +10,6 @@ export default {
       },
     },
   },
-} satisfies Preview;
+};
+
+export default preview;
