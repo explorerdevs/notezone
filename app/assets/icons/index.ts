@@ -27,4 +27,3 @@ export { default as IconStatus } from "./status.svg?react";
 export { default as IconSun } from "./sun.svg?react";
 export { default as IconSystemTheme } from "./system-theme.svg?react";
 export { default as IconTag } from "./tag.svg?react";
-
