@@ -1,5 +1,5 @@
-import type { VariantProps } from "tailwind-variants";
 import type { ComponentProps } from "react";
+import type { VariantProps } from "tailwind-variants";
 import type { buttonStyles } from ".";
 
 export type ButtonVariants = VariantProps<typeof buttonStyles>;
