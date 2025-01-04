@@ -27,10 +27,10 @@ export const button = tv({
       /**Primary */
       primary: "bg-cobalt-500 text-white hover:bg-cobalt-700 focus:shadow-sm",
       ghost:
-        "bg-grey-100 text-grey-600 hover:border hover:border-gray-300 hover:bg-white hover:text-grey-950",
+        "bg-grey-100 text-grey-600 hover:bg-white hover:text-grey-950 hover:outline",
       monochrome:
-        "border border-grey-300 bg-white text-grey-950 hover:border-none hover:bg-grey-100 hover:text-grey-600",
-      lethal: "bg-ruby-500 text-white",
+        "bg-white text-grey-950 outline hover:bg-grey-100 hover:text-grey-600 hover:outline-none",
+      destructive: "bg-ruby-500 text-white",
     },
     size: { sm: "", md: "px-4 py-3", lg: "" },
     disabled: {
@@ -38,4 +38,7 @@ export const button = tv({
     },
     stretch: { true: "w-full" },
   },
+  compoundVariants: [
+    { variant: ["ghost", "monochrome"], className: "outline-1 outline-grey-300" },
+  ],
 });

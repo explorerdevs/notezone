@@ -32,26 +32,36 @@ type Story = StoryObj<typeof Button>;
 const ButtonWithIconDemo = (args: Omit<ButtonProps, "ref">) => {
   return (
     <Button variant="primary" {...args}>
-      <IconRestore />
-      <span>WithIcon</span>
+      <span className="text-lg">
+        <IconRestore />
+      </span>
+      <span>With Icon</span>
     </Button>
   );
 };
 
 export const Primary: Story = {
-  args: {
-    variant: "primary",
-    children: "Hello World!",
-    disabled: false,
-  },
+  args: { variant: "primary", children: "Primary Button" },
 };
-
-export const Monochrome: Story = { args: { variant: "monochrome" } };
+export const Monochrome: Story = {
+  args: { variant: "monochrome", children: "Border Button" },
+};
+export const Ghost: Story = {
+  args: { variant: "ghost", children: "Secondary Button" },
+};
+export const Destructive: Story = {
+  args: { variant: "destructive", children: "Danger Button" },
+};
 
 export const Large: Story = { args: { size: "lg" } };
 export const Small: Story = { args: { size: "sm" } };
 
-export const WithIcon: Story = {
+export const PrimaryWithIcon: Story = {
   render: (args) => <ButtonWithIconDemo {...args} />,
   args: {},
+};
+
+export const MonochromeWithIcon: Story = {
+  render: (args) => <ButtonWithIconDemo {...args} />,
+  args: { variant: "monochrome", children: "Border Button" },
 };
