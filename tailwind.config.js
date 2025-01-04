@@ -6,7 +6,12 @@ import twConfig from "./tailwind.json";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./app/**/*.tsx"],
+  content: ["./app/**/*.{js,jsx,ts,tsx}"],
+  darkMode: ["selector", '[data-mode="dark"]'],
+  corePlugins: {
+    float: false,
+    container: false,
+  },
   future: "all",
   experimental: "all",
   theme: {
@@ -17,10 +22,11 @@ export default {
     },
     fluidCols: { fit: "fit", fill: "fill" },
     extend: {
-      borderRadius: { pill: "100vmax" },
       colors: twConfig.theme.colors,
       fontFamily: {
         sans: [twConfig.theme.fontFamily.sans, ...twDefaultTheme.fontFamily.sans],
+        serif: [twConfig.theme.fontFamily.serif, ...twDefaultTheme.fontFamily.serif],
+        mono: [twConfig.theme.fontFamily.mono, ...twDefaultTheme.fontFamily.mono],
       },
       cursor: twConfig.theme.cursor,
       screens: {

@@ -17,6 +17,7 @@
   "editor.wordWrapColumn": 96,
   "biome.enabled": true,
   "eslint.enable": false,
+  "mdx.server.enable": true,
   "json.validate.enable": true,
   "markdown.extension.syntax.plainTheme": true,
   "material-icon-theme.activeIconPack": "react_redux",
@@ -24,7 +25,7 @@
   "npm-intellisense.packageSubfoldersIntellisense": true,
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.experimental.classRegex": [
-    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   "tailwindCSS.includeLanguages": {
     "xslt": "html"

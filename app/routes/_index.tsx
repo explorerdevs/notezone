@@ -1,4 +1,4 @@
-import { Button } from "@/components/button";
+import { Button } from "@/stories/button";
 
 export default function Page() {
   return (
