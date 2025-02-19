@@ -1,7 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:is(a, button, label, option) {
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: 0.875rem;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Noto Serif Variable", ui-serif, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  --font-mono: "Source Code Pro Variable", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --breakpoint-3xs: 24em; /*  (min-width: 384px) */
+  --breakpoint-2xs: 30em; /*  (min-width: 480px) */
+  --breakpoint-xs: 36em; /*  (min-width: 576px) */
+  --breakpoint-sm: 40em; /*  (min-width: 640px) */
+  --breakpoint-md: 48em; /*  (min-width: 768px) */
+  --breakpoint-lg: 64em; /*  (min-width: 1024px) */
+  --breakpoint-xl: 80em; /*  (min-width: 1280px) */
+  --breakpoint-2xl: 96em; /*  (min-width: 1536px) */
+  --breakpoint-3xl: 120em; /*  (min-width: 1920px) */
+
+  --color-grey-50: oklch(from #f5f7fa l c h);
+  --color-grey-100: oklch(from #f3f5f8 l c h);
+  --color-grey-200: oklch(from #e0e4ea l c h);
+  --color-grey-300: oklch(from #cacfd8 l c h);
+  --color-grey-400: oklch(from #99a0ae l c h);
+  --color-grey-500: oklch(from #717784 l c h);
+  --color-grey-600: oklch(from #525866 l c h);
+  --color-grey-700: oklch(from #2b303b l c h);
+  --color-grey-800: oklch(from #232530 l c h);
+  --color-grey-900: oklch(from #191b25 l c h);
+  --color-grey-950: oklch(from #0e121b l c h);
+
+  --color-cobalt-50: oklch(from #ebf1ff l c h);
+  --color-cobalt-500: oklch(from #335cff l c h);
+  --color-cobalt-700: oklch(from #2547d0 l c h);
+
+  --color-mint-100: oklch(from #d1fbe9 l c h);
+  --color-mint-500: oklch(from #21c16b l c h);
+
+  --color-ruby-100: oklch(from #ffd5d8 l c h);
+  --color-ruby-500: oklch(from #fb3748 l c h);
+
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+  --tw-grid-fit: auto-fit;
+  --tw-grid-fill: auto-fill;
+
+  --cursor-pointer: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI6SURBVHgBnZRBaxNBGIYnu9uNSW1NlkgMVAl4Cyg5CAUPJlYFTyaX3CohePKUn5BcBA9CfkAvAf+B4sVLBC8eChv05ClKVaQIiUKjabOO77s7E8bUBpsXnrwzu9lvvvm+2bXFccWADRw1XlpWJpNZg+8ACV4kEomNVqtliSW0Am2mUik5HA5luVxmwEe5XC4pltBZ27a38/m8pHq9HoP54KI47ZbT6fQ52H1mRjE7jnFtK5vNrjJzhSuiui5cYA2Z3YN/HwwGYcBischgH8En8BLsKZ5w8VqtdiwoJ5bneeuO49zGeBdFD4OVSqVwu77vh1nS9VgF3SoUCq4ZiJObzAgcgK8sPtVsNqWWvka1221d011wgckI9cPJ5263K7k9NkDXbZH4Xzz3DRRVLcPDycmYBTe6KPV8kUR0Hm+AM0JFvA4+6DpRnU5nNq5UKn85A5jBUOdb8ITO7CrY4dZ0F+dX/5cbmd0Fq6zXb7CPI/F6NBq9bTQa4n/V7/dpI2QmZxfZWugKhm3eNLdI6S5q1/VkozB+BjZB3Dwe6+COZVlP4Ufs7CLV63UGeg8egksieiNmspPJZA6+DZ6DX/MZVqvVMDt1JA6w8GP4NV38ebnxePwy/IEK+FMVWHMIhmr8BnWuwj2hDqwzF+xwMpnsIeCr6XQ6DoJgIKIvhhuLxaZIjm/IEZgAH/ffwX+IqIknvvU8e+fBBlb38JALDxBwrLKTWGwf/gWMzcKfJP3pXjGuBcqlyjAwH/gDZjDKatJ5fJYAAAAASUVORK5CYII="),
+    pointer;
+}
+
+@custom-variant data-checked (&[data-ui~="checked"]);
+
+@utility grid-cols-fit-* {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, calc(--value(integer) * 0.25rem)), 1fr)
+  );
+}
+
+:is(a, button, label, option, details, select, input[type="checkbox"]) {
   @apply cursor-pointer;
+}
+
+:is(:disabled, [aria-disabled="true"]) {
+  @apply pointer-events-none cursor-not-allowed!;
 }

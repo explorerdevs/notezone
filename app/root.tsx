@@ -7,13 +7,13 @@ import "@fontsource-variable/noto-serif";
 //@ts-expect-error
 import "@fontsource-variable/source-code-pro";
 
-import "./global.css";
+import "./tailwind.css";
 
 import type { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [];
 
-export default function () {
+export default function() {
   return <Outlet />;
 }
 
