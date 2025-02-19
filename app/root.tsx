@@ -13,7 +13,7 @@ import type { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [];
 
-export default function() {
+export default function () {
   return <Outlet />;
 }
 
