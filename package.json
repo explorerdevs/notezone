@@ -75,10 +75,6 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "esbuild",
-      "lefthook"
-    ]
+    "onlyBuiltDependencies": ["@biomejs/biome", "esbuild", "lefthook"]
   }
 }
