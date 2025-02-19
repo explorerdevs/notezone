@@ -7,7 +7,7 @@ import "@fontsource-variable/noto-serif";
 //@ts-expect-error
 import "@fontsource-variable/source-code-pro";
 
-import "./global.css";
+import "./tailwind.css";
 
 import type { LinksFunction } from "@remix-run/node";
 
