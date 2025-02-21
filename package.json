@@ -76,14 +76,7 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "@clerk/shared",
-      "esbuild",
-      "lefthook"
-    ],
-    "ignoredBuiltDependencies": [
-      "@clerk/shared"
-    ]
+    "onlyBuiltDependencies": ["@biomejs/biome", "@clerk/shared", "esbuild", "lefthook"],
+    "ignoredBuiltDependencies": ["@clerk/shared"]
   }
 }
