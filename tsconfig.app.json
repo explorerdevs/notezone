@@ -1,6 +1,5 @@
 {
   "include": [
-    "remix.env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/.server/**/*.ts",
@@ -19,6 +18,7 @@
       "@/*": ["./app/*"]
     },
 
+    "types": ["@remix-run/node", "vite-plugin-svgr/client", "vite/client"],
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,

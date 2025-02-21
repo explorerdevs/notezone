@@ -1,6 +1,8 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "organizeImports": { "enabled": true },
+  "organizeImports": {
+    "enabled": true
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -10,7 +12,7 @@
           "level": "warn",
           "fix": "safe",
           "options": {
-            "attributes": ["classList", "tw"],
+            "attributes": ["classList", "tw", "className", "class"],
             "functions": ["tw", "cn", "tv"]
           }
         }
@@ -24,11 +26,9 @@
     "indentStyle": "space",
     "ignore": ["node_modules", "dist", ".vercel", ".vscode", ".react-router"]
   },
-  "javascript": { "formatter": { "quoteStyle": "double" } },
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
   }
 }

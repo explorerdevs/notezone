@@ -8,7 +8,7 @@ const isStorybook = process.argv[1]?.includes("storybook");
 
 export default defineConfig({
   envPrefix: "PUBLIC_",
-  server: { host: true },
+  server: { host: true, port: 3000 },
   plugins: [
     !isStorybook &&
       remix({
@@ -18,8 +18,12 @@ export default defineConfig({
           v3_throwAbortReason: true,
           v3_singleFetch: true,
           v3_lazyRouteDiscovery: true,
+          unstable_optimizeDeps: true,
+          v3_routeConfig: true,
         },
+        ignoredRouteFiles: ["**/*.css"],
       }),
+    tsconfigPaths(),
     tailwindcss(),
     svgr({
       svgrOptions: {
@@ -27,7 +31,6 @@ export default defineConfig({
         svgoConfig: { floatPrecision: 2 },
       },
     }),
-    tsconfigPaths(),
   ],
   define: { __BUILD_DATE__: JSON.stringify(new Date()) },
 });

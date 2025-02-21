@@ -11,12 +11,13 @@ import type {
 } from "@remix-run/node";
 
 // Reject all pending promises from handler functions after 5 seconds
-export const streamTimeout = 5000;
+export const streamTimeout = 5_000;
 
 export default async function handleRequest(
   ...args: Parameters<HandleDocumentRequestFunction>
 ) {
   const [request, status, headers, context, _] = args;
+
   const callback = isbot(request.headers.get("user-agent"))
     ? "onAllReady"
     : "onShellReady";
@@ -30,6 +31,7 @@ export default async function handleRequest(
       {
         [callback]: () => {
           shellRendered = true;
+
           const body = new PassThrough();
           const stream = createReadableStreamFromReadable(body);
 
@@ -38,9 +40,7 @@ export default async function handleRequest(
           resolve(new Response(stream, { headers, status: failed ? 500 : status }));
           pipe(body);
         },
-        onShellError: (e) => {
-          reject(e);
-        },
+        onShellError: reject,
         onError: (e) => {
           failed = true;
           // Log streaming rendering errors from inside the shell.  Don't log
@@ -53,7 +53,7 @@ export default async function handleRequest(
 
     // Automatically timeout the React renderer after 8 seconds, which ensures
     // React has enough time to flush down the rejected boundary contents
-    setTimeout(abort, streamTimeout + 1000 * 3);
+    setTimeout(abort, streamTimeout + 1_000);
   });
 }
 
