@@ -9,7 +9,6 @@ import {
 } from "react-router";
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes";
 
-
 import { themeSessionResolver } from "./sessions.server";
 
 import "@fontsource-variable/inter";
@@ -18,7 +17,6 @@ import "@fontsource-variable/source-code-pro";
 import "./global.css";
 
 import type { Route } from "./+types/root";
-
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -55,7 +53,6 @@ export const Layout = ({ children }: React.PropsWithChildren) => {
     </html>
   );
 };
-
 
 export default function Root() {
   const data = useLoaderData<typeof loader>();
