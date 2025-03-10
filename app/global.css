@@ -56,7 +56,7 @@
     pointer;
 }
 
-@custom-variant data-checked (&[data-ui~="checked"]);
+@custom-variant dark (&:where([data-darkreader-scheme=dark], [data-darkreader-scheme=dark] *));
 
 @utility grid-cols-fit-* {
   grid-template-columns: repeat(
