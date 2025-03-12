@@ -1,11 +1,11 @@
 import { fn } from "@storybook/test";
 
-import { Button } from ".";
+import type { Meta, StoryObj } from "@storybook/react";
+import type { ButtonProps } from "./__types__";
 
 import { IconRestore } from "@/assets/icons";
 
-import type { Meta, StoryObj } from "@storybook/react";
-import type { ButtonProps } from "./__types__";
+import { Button } from ".";
 
 const meta: Meta<typeof Button> = {
   title: "Button",

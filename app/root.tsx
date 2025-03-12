@@ -11,12 +11,12 @@ import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes"
 
 import { themeSessionResolver } from "./sessions.server";
 
+import type { Route } from "./+types/root";
+
+import "@/global.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/noto-serif";
 import "@fontsource-variable/source-code-pro";
-import "./global.css";
-
-import type { Route } from "./+types/root";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

@@ -1,8 +1,8 @@
 import { fn } from "@storybook/test";
 
-import { TextInput } from ".";
-
 import type { Meta, StoryObj } from "@storybook/react";
+
+import { TextInput } from ".";
 
 const meta: Meta<typeof TextInput> = {
   title: "TextInput",
