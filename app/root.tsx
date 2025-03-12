@@ -7,7 +7,7 @@ import {
   isRouteErrorResponse,
   useLoaderData,
 } from "react-router";
-import { ThemeProvider, useTheme } from "remix-themes";
+import { ThemeProvider } from "remix-themes";
 
 import { themeSessionResolver } from "./sessions.server";
 
@@ -30,7 +30,6 @@ export const loader = async ({ request }: Route.LoaderArgs) => {
 
 export default function Root() {
   const data = useLoaderData<typeof loader>();
-
   return (
     <ThemeProvider specifiedTheme={data.theme} themeAction="/_actions/theme">
       <Layout>
@@ -42,15 +41,8 @@ export default function Root() {
 
 const Layout = ({ children }: React.PropsWithChildren) => {
   const data = useLoaderData<typeof loader>();
-  const [theme] = useTheme();
-
   return (
-    <html
-      lang="en"
-      className="antialiased"
-      data-darkreader-scheme={theme}
-      data-darkreader-mode="dynamic"
-    >
+    <html lang="en" className="antialiased">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
