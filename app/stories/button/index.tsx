@@ -25,11 +25,11 @@ export const button = tv({
       // TODO: Need to add focus states, shadow config into tailwind.json
       generic: "",
       /**Primary */
-      primary: "bg-cobalt-500 text-white hover:bg-cobalt-700 focus:shadow-sm",
+      primary: "bg-cobalt-500 text-white hover:bg-cobalt-700 focus:shadow-xs",
       ghost:
         "bg-grey-100 text-grey-600 hover:bg-white hover:text-grey-950 hover:outline",
       monochrome:
-        "bg-white text-grey-950 outline hover:bg-grey-100 hover:text-grey-600 hover:outline-none",
+        "bg-white text-grey-950 outline hover:bg-grey-100 hover:text-grey-600 hover:outline-hidden",
       destructive: "bg-ruby-500 text-white",
     },
     size: { sm: "", md: "px-4 py-3", lg: "" },

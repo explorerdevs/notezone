@@ -1,5 +1,5 @@
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
-import "../app/tailwind.css";
+import "../app/global.css";
 
 import type { Preview } from "@storybook/react";
 
@@ -14,6 +14,6 @@ export const decorators = [
   withThemeByDataAttribute({
     themes: { light: "light", dark: "dark" },
     defaultTheme: "light",
-    attributeName: "data-mode",
+    attributeName: "data-darkreader-scheme",
   }),
 ];
