@@ -7,7 +7,7 @@ import {
   isRouteErrorResponse,
   useLoaderData,
 } from "react-router";
-import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes";
+import { ThemeProvider, useTheme } from "remix-themes";
 
 import { themeSessionResolver } from "./sessions.server";
 
@@ -17,6 +17,7 @@ import "@/global.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/noto-serif";
 import "@fontsource-variable/source-code-pro";
+import { PreventFlashOnWrongTheme } from "remix-themes";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -27,7 +28,19 @@ export const loader = async ({ request }: Route.LoaderArgs) => {
   return { theme: getTheme() };
 };
 
-export const Layout = ({ children }: React.PropsWithChildren) => {
+export default function Root() {
+  const data = useLoaderData<typeof loader>();
+
+  return (
+    <ThemeProvider specifiedTheme={data.theme} themeAction="/_actions/theme">
+      <Layout>
+        <Outlet />
+      </Layout>
+    </ThemeProvider>
+  );
+}
+
+const Layout = ({ children }: React.PropsWithChildren) => {
   const data = useLoaderData<typeof loader>();
   const [theme] = useTheme();
 
@@ -53,15 +66,6 @@ export const Layout = ({ children }: React.PropsWithChildren) => {
     </html>
   );
 };
-
-export default function Root() {
-  const data = useLoaderData<typeof loader>();
-  return (
-    <ThemeProvider specifiedTheme={data.theme} themeAction="/_actions/theme">
-      <Outlet />
-    </ThemeProvider>
-  );
-}
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = "Oops!";
