@@ -65,3 +65,29 @@ export const MonochromeWithIcon: Story = {
   render: (args) => <ButtonWithIconDemo {...args} />,
   args: { variant: "monochrome", children: "Border Button" },
 };
+
+export const Focus: Story = {
+  parameters: {
+    pseudo: { focus: true },
+  },
+  args: { variant: "primary", children: "Focused Button" },
+};
+
+export const FocusStates: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4">
+      <Button variant="primary" className="focus">
+        Focused Primary Button
+      </Button>
+      <Button variant="ghost" className="focus">
+        Focused Ghost Button
+      </Button>
+      <Button variant="monochrome" className="focus">
+        Focused Monochrome Button
+      </Button>
+      <Button variant="destructive" className="focus">
+        Focused Destructive Button
+      </Button>
+    </div>
+  ),
+};
