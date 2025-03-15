@@ -18,23 +18,22 @@ export const Button = ({
 };
 
 export const button = tv({
-  base: "flex items-center justify-center gap-2 rounded-lg font-medium text-sm transition-colors",
+  base: "flex items-center justify-center gap-2 rounded-lg font-medium text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-grey-400 focus:ring-offset-3",
   defaultVariants: { variant: "primary", size: "md" },
   variants: {
     variant: {
-      // TODO: Need to add focus states, shadow config into tailwind.json
-      generic: "",
+      generic: "focus:ring-grey-400",
       /**Primary */
-      primary: "bg-cobalt-500 text-white hover:bg-cobalt-700 focus:shadow-xs",
+      primary: "bg-cobalt-500 text-white hover:bg-cobalt-700",
       ghost:
-        "bg-grey-100 text-grey-600 hover:bg-white hover:text-grey-950 hover:outline",
+        "bg-grey-100 text-grey-600 hover:bg-white hover:text-grey-950 hover:outline focus:ring-grey-300",
       monochrome:
-        "bg-white text-grey-950 outline hover:bg-grey-100 hover:text-grey-600 hover:outline-hidden",
-      destructive: "bg-ruby-500 text-white",
+        "bg-white text-grey-950 outline hover:bg-grey-100 hover:text-grey-600 hover:outline-hidden focus:ring-grey-300",
+      destructive: "bg-ruby-500 text-white focus:ring-ruby-100",
     },
-    size: { sm: "", md: "px-4 py-3", lg: "" },
+    size: { sm: "px-3 py-2", md: "px-4 py-3", lg: "px-4 py-3" },
     disabled: {
-      true: "pointer-events-none cursor-not-allowed bg-grey-50 text-grey-300",
+      true: "pointer-events-none cursor-not-allowed bg-grey-50 text-grey-300 focus:ring-0",
     },
     stretch: { true: "w-full" },
   },
